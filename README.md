@@ -14,6 +14,7 @@ The code is implemented in Python using Google Colab.
 - [Setup Instructions](#setup-instructions)  
 - [Project Structure](#project-structure)  
 - [Endpoints Used](#endpoints-used)
+- [Additional Context and Comments](#additional-context-and-comments)
 - [Results](#results)
 
 ---
@@ -76,7 +77,19 @@ Data-Source-API-Analyst-Test/
 - Rate Limit: GET /rate_limit
   (Monitor the remaining request quota)
 
-Detailed documentation for each endpoint can be found in API_Documentation.md.
+Detailed documentation for each endpoint can be found in API_Documentation.md
+
+## Additional Context and Comments
+1. GitHub API Exploration:  
+   The project heavily relies on the GitHub REST API. Extensive research into rate limits, request headers, and response handling was conducted to ensure reliability
+2. Error Handling:
+   - Unknown response structures are logged for manual inspection
+   - Common errors can be found in API_Documentation.md
+3. Pagination and Rate Limits:  
+   Pagination is managed dynamically with a fetch_all_pages function. The function adapts to empty responses or errors by breaking the loop or retrying the request
+4. Extensibility:  
+   The script is designed to be modular and easily extensible for additional GitHub API endpoints or changes in API versions
+5. Future improvements could include integrating automated tests for API endpoints and adding support for GraphQL queries
 
 ## Results
 Successfully retrieved and saved:  
